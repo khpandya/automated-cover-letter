@@ -12,10 +12,12 @@ def manageDocs(companyName,jobTitle):
     """
     pathCompany=companyName.replace(" ","")
     pathJobTitle=jobTitle.replace(" ","")
-    newPath=os.path.join(os.getcwd(),pathCompany)
+    #TODO getcwd not working right so hardcoded. You need to replace this with something which gives you path of script.
+    newPath=os.path.join(r'C:\Users\Krishna\Desktop\automated-cover-letter',pathCompany)
     Path(newPath).mkdir(parents=True,exist_ok=True)
     destination=newPath+'\\'+pathJobTitle+'.docx'
-    shutil.copy('.\\cover-letter.docx',destination)
+    #TODO hardcoded path to template since cwd or relative paths aren't working properly right now
+    shutil.copy(r'C:\Users\Krishna\Desktop\automated-cover-letter\cover-letter.docx',destination)
     return destination
 
 def replace_string(filename,find,replace):
@@ -55,7 +57,8 @@ if contactName=="d":
 replaceDict={'#companyName#':companyName,
             '#date#':date.today().strftime("%B %d, %Y"),
             '#jobTitle#':jobTitle,
-            '#jobId#':jobId
+            '#jobId#':jobId,
+            '#contactName#':contactName
             }
 
 destination=manageDocs(companyName,jobTitle)
@@ -64,4 +67,3 @@ for find in replaceDict:
     replace_string(destination,find,replaceDict[find])
 
 convertToPDF(destination)
-
