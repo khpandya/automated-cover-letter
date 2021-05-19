@@ -40,11 +40,16 @@ def convertToPDF(docxpath):
 
 companyName=input("company name: ")
 jobTitle=input("job title: ")
-jobId=input("job ID: ")
+jobId=input("job ID (enter d if no job ID): ")
+contactName=input("contact name (enter d if contact name is unknown): ")
+
 if jobId=="d":
     jobId=""
 else:
     jobId=" with job id "+jobId
+
+if contactName=="d":
+    contactName="Sir/Ma'am"
 
 
 replaceDict={'#companyName#':companyName,
