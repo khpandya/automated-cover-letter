@@ -12,9 +12,7 @@ Open the xlsx file, fill out the names of the companies and the position names y
 
 Save your changes and double click the exe file, wait for the program to run.
 
-Folders with the name of the companies will start being made wherever you are running the exe. Inside them cover letters in the form of docx files with the name of the position
-
-will be made and eventually a PDF with the same name (your final cover letter) will appear there as well.
+Folders with the name of the companies will start being made wherever you are running the exe. Inside them cover letters in the form of docx files with the name of the position will be made and eventually a PDF with the same name (your final cover letter) will appear there as well.
 
 The cover letter will say ```Dear Sir/Ma'am``` if d is specified in the contact name cell.
 
@@ -34,4 +32,4 @@ I am interested in the position of Software Engineering Intern at Tesla.
 ```
 if the job ID is specified as d.
 
-Enjoy and keep applying, it can be hard but it'll be worth it at the end :)
+Enjoy and keep applying, it can be hard but it'll all be worth it in the end :)
