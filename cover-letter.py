@@ -5,19 +5,25 @@ from pathlib import Path
 from docx.shared import Pt
 from datetime import date
 from docx2pdf import convert
+import sys
 
 def manageDocs(companyName,jobTitle):
     """
-    makes a folder named the company name if it doesn't exist and copies the cover letter template there and renames it to the job title
+    makes a folder named the company name if it doesn't exist in cwd and copies the cover letter template there and renames it to the job title.
+    Returns path of newly copied cover letter template.
     """
+    # remove spaces
     pathCompany=companyName.replace(" ","")
     pathJobTitle=jobTitle.replace(" ","")
-    #TODO getcwd not working right so hardcoded. You need to replace this with something which gives you path of script.
-    newPath=os.path.join(r'C:\Users\Krishna\Desktop\automated-cover-letter',pathCompany)
+    # change cwd to path of script
+    os.chdir(os.path.dirname(sys.argv[0]))
+    # make folder named company name
+    newPath=os.path.join(os.getcwd(),pathCompany)
     Path(newPath).mkdir(parents=True,exist_ok=True)
-    destination=newPath+'\\'+pathJobTitle+'.docx'
-    #TODO hardcoded path to template since cwd or relative paths aren't working properly right now
-    shutil.copy(r'C:\Users\Krishna\Desktop\automated-cover-letter\cover-letter.docx',destination)
+    # copy template to the new folder and rename it to the name of the position
+    templatePath=os.path.join(os.getcwd(),'cover-letter.docx')
+    destination=os.path.join(newPath,pathJobTitle+'.docx')
+    shutil.copy(templatePath,destination)
     return destination
 
 def replace_string(filename,find,replace):
