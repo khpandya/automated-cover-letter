@@ -1,5 +1,7 @@
 # automated-cover-letter
 
+Video demo - https://www.youtube.com/watch?v=ffPdBLb8K0E
+
 Click Code->download zip on the upper right green button.
 
 Extract the zip file.
