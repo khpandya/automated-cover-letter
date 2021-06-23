@@ -1,6 +1,10 @@
 # automated-cover-letter
 
-Video demo - https://www.youtube.com/watch?v=ffPdBLb8K0E
+### Video demo 
+
+https://www.youtube.com/watch?v=ffPdBLb8K0E
+
+### How to use
 
 Click Code->download zip on the upper right green button.
 
